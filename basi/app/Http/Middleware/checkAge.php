@@ -16,6 +16,9 @@ class checkAge
      */
     public function handle(Request $request, Closure $next)
     {
+        if($request->age <=200){
+        return redirect('about');
+    }
         return $next($request);
     }
 }

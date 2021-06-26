@@ -7,9 +7,10 @@ use App\Http\Controllers\ContractController;
 Route::get('/', function () {
     return view('welcome');
 });
+
 Route::get('/about', function () {
     return view('about');
-});
+})->middleware('age');
 // Route::get('/contract', function () {
 //     echo "This is contract Page";
 // });
