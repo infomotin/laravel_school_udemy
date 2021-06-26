@@ -49,7 +49,7 @@
                 <h1>Home Page </h1>
                 <a href="{{ url('/') }}">Home</a> |
                 <a href="{{url('/about')  }}">About</a> |
-                <a href="{{url('/contract')  }}">Contract</a> |
+                <a href="{{route('name') }}">Contract</a> |
                 <a href="{{ url('/stuff') }}">Stuff</a>
 
                 {{-- <a href="http://"></a>

@@ -24,5 +24,5 @@ Route::get('/stuff', function () {
 // Route::get('path','controllerName@methodName');
 
 
-Route::get('/contract', [ContractController::class, 'index']);
+Route::get('/contractj-ej-jehto', [ContractController::class, 'index'])->name('name');
 // Route::get('/contract', [ContractController::class, 'index'])->middleware('age');
