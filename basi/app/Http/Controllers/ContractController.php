@@ -8,6 +8,7 @@ class ContractController extends Controller
 {
     //create index method that we declaraing on Route file
     public function index(){
-        echo ('//create index method that we declaraing on Route file');
+        // echo ('//create index method that we declaraing on Route file');
+        return view('about');
     }
 }
