@@ -47,10 +47,10 @@
                     --}}
                 </div>
                 <h1>Home Page </h1>
-                <a href="http://">Home</a>|
-                <a href="http://">About</a>|
-                <a href="http://">Contract</a>|
-                <a href="http://">Stuff</a>|
+                <a href="{{ url('/') }}">Home</a> |
+                <a href="{{url('/about')  }}">About</a> |
+                <a href="{{url('/contract')  }}">Contract</a> |
+                <a href="{{ url('/stuff') }}">Stuff</a>
 
                 {{-- <a href="http://"></a>
                 <a href="http://"></a> --}}
