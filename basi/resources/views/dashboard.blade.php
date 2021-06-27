@@ -1,7 +1,10 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Dashboard') }}
+             <b style="float: left;"> Hi, {{ Auth::user()->name }}</b>
+            <b style="float: right;">Total User
+            <span class="badge badge-danger"><a>{{ count($user) }}</a></span>
+            </b>
         </h2>
 
 
@@ -22,12 +25,13 @@
                         </tr>
                     </thead>
                     <tbody>
+                        @php($i=1)
                         @foreach ($user as $use)
                         <tr>
-                            <th scope="row">1</th>
+                            <th scope="row">{{ $i++ }}</th>
                             <td>{{ $use->name }}</td>
                             <td>{{ $use->email }}</td>
-                            <td>{{ $use->created_at }}</td>
+                            <td>{{ $use->created_at->diffForHumans() }}</td>
                         </tr>
                         @endforeach
 
