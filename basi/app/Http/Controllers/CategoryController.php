@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\DB;
 use Auth;
 
 
@@ -14,7 +15,9 @@ class CategoryController extends Controller
         return "some thing";
     }
     public function allCat(){
-        return view('admin.category.category');
+
+        $allcat = DB::table('categories')->get();
+        return view('admin.category.category', compact('allcat'));
     }
     public function addcategory(Request $request){
         $validated = $request->validate([
@@ -36,7 +39,7 @@ class CategoryController extends Controller
         //     ]
         // );
 
-        // object based data inseart into table
+        // object based data insert into table
 
         $category = new Category;
         $category->category_name = $request->category_name;

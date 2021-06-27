@@ -33,7 +33,7 @@ Route::get('/stuff', function () {
 Route::get('/contractj-ej-jehto', [ContractController::class, 'index'])->name('name');
 // Route::get('/contract', [ContractController::class, 'index'])->middleware('age');
 
-Route::get('/category', [CategoryController::class, 'allCat','allCat'])->name('category');
+Route::get('/category', [CategoryController::class, 'allCat'])->name('category');
 
 Route::post('/category/add', [CategoryController::class, 'addcategory'])->name('store.cat');
 

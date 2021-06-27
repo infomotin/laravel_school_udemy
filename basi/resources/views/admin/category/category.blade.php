@@ -16,34 +16,34 @@
                             <thead>
                                 <tr>
                                     <th scope="col">SL No</th>
-                                    <th scope="col">User Name</th>
-                                    <th scope="col">Email</th>
-                                    <th scope="col">Actived Date</th>
+                                    <th scope="col">User Id</th>
+                                    <th scope="col">Categoty Name</th>
+                                    <th scope="col">Create Date</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                {{-- @php($i = 1)
-                        @foreach ($user as $use) --}}
+                                @php($i = 1)
+                                @foreach ($allcat as $allC)
                                 <tr>
                                     <th scope="row">
-                                        {{-- {{ }} --}}
+                                        {{ $i++}}
                                     </th>
                                     <td>
-                                        {{-- {{ }} --}}
+                                        {{ $allC->user_id }}
 
                                     </td>
                                     <td>
 
-                                        {{-- {{  }} --}}
+                                        {{ $allC->category_name }}
 
                                     </td>
                                     <td>
 
-                                        {{-- {{  }} --}}
+                                        {{  $allC->created_at }}
 
                                     </td>
                                 </tr>
-                                {{-- @endforeach --}}
+                                @endforeach
 
                             </tbody>
                         </table>
