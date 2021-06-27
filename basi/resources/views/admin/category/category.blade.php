@@ -60,7 +60,7 @@
                         <form action="{{ route('store.cat') }}" method="POST" @csrf>
                             <div class="form-group">
                                 <label for="exampleInputEmail1" class="m-2">Category Name</label>
-                                <input type="email" class="form-control" id="exampleInputEmail1"
+                                <input type="email" class="form-control" id="exampleInputEmail1" name="cat_name"
                                     aria-describedby="emailHelp" placeholder="Enter Category Name">
                             </div>
                             <button type="submit" class="btn btn-primary">Add Category</button>
