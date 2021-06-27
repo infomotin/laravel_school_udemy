@@ -28,13 +28,22 @@ class CategoryController extends Controller
 
         ]);
 
-        Category::insert(
-            [
-                'user_id'=>Auth::user()->id,
-                'category_name'=> $request->category_name,
-                'created_at' => Carbon::now()
-            ]
-        );
+        // Category::insert(
+        //     [
+        //         'user_id'=>Auth::user()->id,
+        //         'category_name'=> $request->category_name,
+        //         'created_at' => Carbon::now()
+        //     ]
+        // );
+
+        // object based data inseart into table
+
+        $category = new Category;
+        $category->category_name = $request->category_name;
+        $category->user_id = Auth::user()->id;
+        $category->created_at= Carbon::now();
+        $category->save();
+
 
     }
 }
