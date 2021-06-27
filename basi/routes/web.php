@@ -3,7 +3,9 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\ContractController;
+// for querey builder
 use Illuminate\Support\Facades\DB;
+// for working with model 
 use App\Models\User;
 
 Route::get('/', function () {
