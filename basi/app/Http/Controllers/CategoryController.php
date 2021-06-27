@@ -16,6 +16,12 @@ class CategoryController extends Controller
         $validated = $request->validate([
             'cat_name' => 'required|unique:posts|max:255',
 
+        ],
+        [
+                'cat_name.required' => 'Place Input Category Name ',
+                'cat_name.unique' => 'Duplicat ',
+                'cat_name.max' => 'Dont Exite Your limite ',
+
         ]);
 
     }

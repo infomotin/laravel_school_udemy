@@ -34,7 +34,7 @@ Route::get('/contractj-ej-jehto', [ContractController::class, 'index'])->name('n
 
 Route::get('/category', [CategoryController::class, 'allCat','allCat'])->name('category');
 
-Route::get('/category/add', [CategoryController::class, 'addcategory'])->name('store.cat');
+Route::post('/category/add', [CategoryController::class, 'addcategory'])->name('store.cat');
 
 
 

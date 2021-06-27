@@ -57,14 +57,21 @@
                             Add Category
                         </div>
                         <div class="card-body">
-                        <form action="{{ route('store.cat') }}" method="POST" @csrf>
-                            <div class="form-group">
-                                <label for="exampleInputEmail1" class="m-2">Category Name</label>
-                                <input type="email" class="form-control" id="exampleInputEmail1" name="cat_name"
-                                    aria-describedby="emailHelp" placeholder="Enter Category Name">
-                            </div>
-                            <button type="submit" class="btn btn-primary">Add Category</button>
-                        </form>
+
+                            <form action="{{ route('store.cat') }}" method="POST">
+                                 @csrf
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1" class="m-2">Category Name</label>
+                                    <input type="text" class="form-control" id="exampleInputEmail1" name="cat_name"
+                                        aria-describedby="emailHelp" placeholder="Enter Category Name" >
+                                        {{-- validations part  --}}
+                                    @error('cat_name')
+                                        <span class="text-danger">{{ $message }}</span>
+                                    @enderror
+                                    {{-- validations part end  --}}
+                                </div>
+                                <button type="submit" class="btn btn-primary">Add Category</button>
+                            </form>
                         </div>
                     </div>
                 </div>
