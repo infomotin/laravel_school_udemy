@@ -22,12 +22,14 @@
                         </tr>
                     </thead>
                     <tbody>
+                        @foreach ($user as $use)
                         <tr>
                             <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
+                            <td>{{ $use->name }}</td>
+                            <td>{{ $use->email }}</td>
+                            <td>{{ $use->created_at }}</td>
                         </tr>
+                        @endforeach
 
                     </tbody>
                 </table>

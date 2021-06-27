@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\ContractController;
+use App\Models\User;
 
 Route::get('/', function () {
     return view('home');
@@ -28,5 +29,7 @@ Route::get('/contractj-ej-jehto', [ContractController::class, 'index'])->name('n
 // Route::get('/contract', [ContractController::class, 'index'])->middleware('age');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('dashboard');
+    $user = User::all();
+    
+    return view('dashboard',compact('user'));
 })->name('dashboard');
