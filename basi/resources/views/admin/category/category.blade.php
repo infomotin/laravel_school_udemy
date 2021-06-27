@@ -57,9 +57,9 @@
                             Add Category
                         </div>
                         <div class="card-body">
-                        <form>
-                            <div >
-                                <label for="exampleInputEmail1" class="form-group m-2">Category Name</label>
+                        <form action="{{ route('store.cat') }}" method="POST" @csrf>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1" class="m-2">Category Name</label>
                                 <input type="email" class="form-control" id="exampleInputEmail1"
                                     aria-describedby="emailHelp" placeholder="Enter Category Name">
                             </div>

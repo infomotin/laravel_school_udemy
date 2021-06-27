@@ -12,4 +12,7 @@ class CategoryController extends Controller
     public function allCat(){
         return view('admin.category.category');
     }
+    public function addcategory(){
+        return null;
+    }
 }
