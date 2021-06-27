@@ -3,9 +3,10 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\ContractController;
+use App\Http\Controllers\CategoryController;
 // for querey builder
 use Illuminate\Support\Facades\DB;
-// for working with model 
+// for working with model
 use App\Models\User;
 
 Route::get('/', function () {
@@ -31,6 +32,8 @@ Route::get('/stuff', function () {
 Route::get('/contractj-ej-jehto', [ContractController::class, 'index'])->name('name');
 // Route::get('/contract', [ContractController::class, 'index'])->middleware('age');
 
+Route::get('/category', [CategoryController::class, 'index'])->name('category');
+// Route::get('/contract', [ContractController::class, 'index'])->middleware('age');
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     // $user = User::all();
 
