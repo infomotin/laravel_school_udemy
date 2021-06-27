@@ -2,7 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
+use Auth;
+
 
 class CategoryController extends Controller
 {
@@ -23,6 +27,14 @@ class CategoryController extends Controller
                 'cat_name.max' => 'Dont Exite Your limite ',
 
         ]);
+
+        Category::insert(
+            [
+                'user_id'=>Auth::user()->id,
+                'category_name'=> $request->cat_name,
+                'created_at' => Carbon::now(),
+            ]
+        );
 
     }
 }
