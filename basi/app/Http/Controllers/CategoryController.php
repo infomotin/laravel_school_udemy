@@ -18,21 +18,21 @@ class CategoryController extends Controller
     }
     public function addcategory(Request $request){
         $validated = $request->validate([
-            'cat_name' => 'required|unique:posts|max:255',
+                'category_name' => 'required|unique:categories|max:255',
 
         ],
         [
-                'cat_name.required' => 'Place Input Category Name ',
-                'cat_name.unique' => 'Duplicat ',
-                'cat_name.max' => 'Dont Exite Your limite ',
+                'category_name.required' => 'Place Input Category Name ',
+                'category_name.unique' => 'Duplicat ',
+                'category_name.max' => 'Dont Exite Your limite ',
 
         ]);
 
         Category::insert(
             [
                 'user_id'=>Auth::user()->id,
-                'category_name'=> $request->cat_name,
-                'created_at' => Carbon::now(),
+                'category_name'=> $request->category_name,
+                'created_at' => Carbon::now()
             ]
         );
 

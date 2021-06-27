@@ -62,7 +62,7 @@
                                  @csrf
                                 <div class="form-group">
                                     <label for="exampleInputEmail1" class="m-2">Category Name</label>
-                                    <input type="text" class="form-control" id="exampleInputEmail1" name="cat_name"
+                                    <input type="text" class="form-control" id="exampleInputEmail1" name="category_name"
                                         aria-describedby="emailHelp" placeholder="Enter Category Name" >
                                         {{-- validations part  --}}
                                     @error('cat_name')

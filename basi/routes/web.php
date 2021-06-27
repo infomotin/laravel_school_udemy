@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\ContractController;
 use App\Http\Controllers\CategoryController;
+
 // for querey builder
 use Illuminate\Support\Facades\DB;
 // for working with model
