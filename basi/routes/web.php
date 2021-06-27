@@ -32,8 +32,19 @@ Route::get('/stuff', function () {
 Route::get('/contractj-ej-jehto', [ContractController::class, 'index'])->name('name');
 // Route::get('/contract', [ContractController::class, 'index'])->middleware('age');
 
-Route::get('/category', [CategoryController::class, 'index'])->name('category');
+Route::get('/category', [CategoryController::class, 'allCat','allCat'])->name('category');
+
+
+
+
+
+
+
 // Route::get('/contract', [ContractController::class, 'index'])->middleware('age');
+
+
+
+
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     // $user = User::all();
 

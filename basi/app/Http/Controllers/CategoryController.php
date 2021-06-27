@@ -9,4 +9,7 @@ class CategoryController extends Controller
     public function index(){
         return "some thing";
     }
+    public function allCat(){
+        return view('admin.category.category');
+    }
 }
