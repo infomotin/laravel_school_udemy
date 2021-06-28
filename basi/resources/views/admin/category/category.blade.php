@@ -29,11 +29,12 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @php($i = 1)
+                                {{-- @php($i = 1) --}}
                                     @foreach ($allcat as $allC)
                                         <tr>
                                             <th scope="row">
-                                                {{ $i++ }}
+                                                {{-- using sirial number generate  --}}
+                                                {{ $allcat->firstItem()+$loop->index }}
                                             </th>
                                             <td>
                                                 {{ $allC->user_id }}
