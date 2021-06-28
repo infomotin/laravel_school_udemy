@@ -1,9 +1,9 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-             <b style="float: left;"> Hi, {{ Auth::user()->name }}</b>
+            <b style="float: left;"> Hi, {{ Auth::user()->name }}</b>
             <b style="float: right;">Total User
-            <span class="badge badge-danger"><a>{{ count($user) }}</a></span>
+                <span class="badge badge-danger"><a>{{ count($user) }}</a></span>
             </b>
         </h2>
 
@@ -13,6 +13,8 @@
     <div class="py-12">
         <div class="container">
             <div class="row">
+                {{-- alert toast msg --}}
+
                 {{-- <x-jet-welcome />
                 <h1>Some thing For Testing </h1> --}}
                 <table class="table">
@@ -25,21 +27,21 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @php($i=1)
-                        @foreach ($user as $use)
-                        <tr>
-                            <th scope="row">{{ $i++ }}</th>
-                            <td>{{ $use->name }}</td>
-                            <td>{{ $use->email }}</td>
-                            <td>{{ Carbon\Carbon::parse($use->created_at)->diffForHumans() }}</td>
-                        </tr>
-                        @endforeach
+                        @php($i = 1)
+                            @foreach ($user as $use)
+                                <tr>
+                                    <th scope="row">{{ $i++ }}</th>
+                                    <td>{{ $use->name }}</td>
+                                    <td>{{ $use->email }}</td>
+                                    <td>{{ Carbon\Carbon::parse($use->created_at)->diffForHumans() }}</td>
+                                </tr>
+                            @endforeach
 
-                    </tbody>
-                </table>
+                        </tbody>
+                    </table>
 
 
+                </div>
             </div>
         </div>
-    </div>
-</x-app-layout>
+    </x-app-layout>

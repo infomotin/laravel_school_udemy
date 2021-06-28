@@ -47,6 +47,6 @@ class CategoryController extends Controller
         $category->created_at= Carbon::now();
         $category->save();
 
-
+        return Redirect()->back()->with('success','Category Inserted Successfully');
     }
 }
