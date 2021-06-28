@@ -9,12 +9,13 @@
 
                 <div class="col-md-8">
                     <div class="card">
-                        {{-- alert toast massage  --}}
-                        @if(session('success'))
-                        <div class="alert alert-success alert-dismissible fade show" role="alert">
-                            <strong> {{ session('success') }}</strong>
-                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                        </div>
+                        {{-- alert toast massage --}}
+                        @if (session('success'))
+                            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                <strong> {{ session('success') }}</strong>
+                                <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                    aria-label="Close"></button>
+                            </div>
                         @endif
                         <div class="card-header">
                             <b>All Category</b>
@@ -30,65 +31,68 @@
                             </thead>
                             <tbody>
                                 {{-- @php($i = 1) --}}
-                                    @foreach ($allcat as $allC)
-                                        <tr>
-                                            <th scope="row">
-                                                {{-- using sirial number generate  --}}
-                                                {{ $allcat->firstItem()+$loop->index }}
-                                            </th>
-                                            <td>
-                                                {{ $allC->user->name }}
+                                @foreach ($allcat as $allC)
+                                    <tr>
+                                        <th scope="row">
+                                            {{-- using sirial number generate --}}
+                                            {{ $allcat->firstItem() + $loop->index }}
+                                        </th>
+                                        <td>
+                                            {{-- this are using model based join table view --}}
+                                            {{-- {{ $allC->user->name }} --}}
+                                            {{-- quere builder based view --}}
+                                            {{ $allC->user->name }}
 
-                                            </td>
-                                            <td>
+                                        </td>
+                                        <td>
 
-                                                {{ $allC->category_name }}
+                                            {{ $allC->category_name }}
 
-                                            </td>
-                                            <td>
-                                                @if($allC->created_at == NULL)
+                                        </td>
+                                        <td>
+                                            @if ($allC->created_at == null)
                                                 <span class="text-danger">No Data Found </span>
-                                                @else
+                                            @else
                                                 {{ Carbon\Carbon::parse($allC->created_at)->diffForHumans() }}
-                                                @endif
-                                            </td>
-                                        </tr>
-                                    @endforeach
+                                            @endif
+                                        </td>
+                                    </tr>
+                                @endforeach
 
-                                </tbody>
-                            </table>
-                            {{ $allcat->links() }}
-                        </div>
-
+                            </tbody>
+                        </table>
+                        {{ $allcat->links() }}
                     </div>
-                    <div class="col-md-4">
-                        <div class="card">
-                            <div class="card-header">
-                                Add Category
-                            </div>
-                            <div class="card-body">
-
-                                <form action="{{ route('store.cat') }}" method="POST">
-                                    @csrf
-                                    <div class="form-group">
-                                        <label for="exampleInputEmail1" class="m-2">Category Name</label>
-                                        <input type="text" class="form-control" id="exampleInputEmail1" name="category_name"
-                                            aria-describedby="emailHelp" placeholder="Enter Category Name">
-                                        {{-- validations part --}}
-                                        @error('cat_name')
-                                            <span class="text-danger">{{ $message }}</span>
-                                        @enderror
-                                        {{-- validations part end --}}
-                                    </div>
-                                    <button type="submit" class="btn btn-primary">Add Category</button>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-
-
 
                 </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        <div class="card-header">
+                            Add Category
+                        </div>
+                        <div class="card-body">
+
+                            <form action="{{ route('store.cat') }}" method="POST">
+                                @csrf
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1" class="m-2">Category Name</label>
+                                    <input type="text" class="form-control" id="exampleInputEmail1" name="category_name"
+                                        aria-describedby="emailHelp" placeholder="Enter Category Name">
+                                    {{-- validations part --}}
+                                    @error('cat_name')
+                                        <span class="text-danger">{{ $message }}</span>
+                                    @enderror
+                                    {{-- validations part end --}}
+                                </div>
+                                <button type="submit" class="btn btn-primary">Add Category</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+
+
             </div>
         </div>
-    </x-app-layout>
+    </div>
+</x-app-layout>

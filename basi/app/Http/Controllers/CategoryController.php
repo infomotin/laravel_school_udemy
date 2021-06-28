@@ -16,19 +16,19 @@ class CategoryController extends Controller
     }
     public function allCat(){
         // table join with query builder
-        $allcat = DB::table('categories')
-        // where condithons as like
-        ->join('users','categories.user_id', 'users.id')
-        //select field conditions
-        ->select('categories.*','users.name')
-        ->latest()->paginate(2);
+        // $allcat = DB::table('categories')
+        // // where condithons as like
+        // ->join('users','categories.user_id', 'users.id')
+        // //select field conditions
+        // ->select('categories.*','users.name')
+        // ->latest()->paginate(2);
 
         // Query Builder based
         // $allcat = DB::table('categories')->latest()->paginate(2);
 
 
         // Model with static class based using table join()
-        // $allcat = Category::latest()->paginate(5);
+        $allcat = Category::latest()->paginate(5);
         //object based data view
 
 
