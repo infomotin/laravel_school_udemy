@@ -56,7 +56,7 @@
 
                                 </tbody>
                             </table>
-
+                            {{ $allcat->links() }}
                         </div>
 
                     </div>
