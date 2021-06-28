@@ -23,7 +23,7 @@
                             <thead>
                                 <tr>
                                     <th scope="col">SL No</th>
-                                    <th scope="col">User Id</th>
+                                    <th scope="col">User Name</th>
                                     <th scope="col">Categoty Name</th>
                                     <th scope="col">Create Date</th>
                                 </tr>
