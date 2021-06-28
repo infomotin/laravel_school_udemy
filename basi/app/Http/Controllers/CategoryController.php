@@ -75,10 +75,13 @@ class CategoryController extends Controller
 
         return Redirect()->back()->with('success','Category Inserted Successfully');
     }
+
+    // this part are working elegant worsens
     public function editCategory($id){
         $category = Category::find($id);
         return view('admin.category.edit',compact('category'));
     }
+    // this part are working elegant worsens
     public function updateCategory(Request $request,$id){
         $update = Category::find($id)->update([
             'category_name' => $request->category_name,
