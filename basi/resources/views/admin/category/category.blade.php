@@ -37,7 +37,7 @@
                                                 {{ $allcat->firstItem()+$loop->index }}
                                             </th>
                                             <td>
-                                                {{ $allC->user_id }}
+                                                {{ $allC->user->name }}
 
                                             </td>
                                             <td>

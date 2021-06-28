@@ -16,9 +16,9 @@ class CategoryController extends Controller
     }
     public function allCat(){
         // Query Builder based
-        $allcat = DB::table('categories')->latest()->paginate(2);
+        // $allcat = DB::table('categories')->latest()->paginate(2);
         // Model with satatic class based
-        // $allcat = Category::latest()->paginate(2);
+        $allcat = Category::latest()->paginate(5);
         //object based data view
 
 
