@@ -78,15 +78,29 @@ class CategoryController extends Controller
 
     // this part are working elegant worsens
     public function editCategory($id){
-        $category = Category::find($id);
+        // this part are working elegant worsens
+        // $category = Category::find($id);
+        // querey build method
+        $category = DB::table('categories')->where('id',$id)->first();
         return view('admin.category.edit',compact('category'));
     }
     // this part are working elegant worsens
     public function updateCategory(Request $request,$id){
-        $update = Category::find($id)->update([
-            'category_name' => $request->category_name,
-            'user_id' => Auth::user()->id
-        ]);
+        // this part are working elegant worsens
+        // $update = Category::find($id)->update([
+        //     'category_name' => $request->category_name,
+        //     'user_id' => Auth::user()->id
+        // ]);
+
+
+            // Query Builder method
+
+        $data = array();
+        $data['category_name'] = $request->category_name;
+        $data['user_id'] = Auth::user()->id;
+        $data['updated_at'] = Carbon::now();
+        DB::table('categories')->where('id', $id)->update($data);
+
         return Redirect()->route('category')->with('success', 'Category Update Successfully');
 
     }
