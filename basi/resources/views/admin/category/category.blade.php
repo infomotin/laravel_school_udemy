@@ -11,8 +11,8 @@
                     <div class="card">
                         {{-- alert toast massage  --}}
                         @if(session('success'))
-                        <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                            <strong>Holy guacamole!</strong> {{ session('success') }}
+                        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                            <strong> {{ session('success') }}</strong>
                             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                         </div>
                         @endif

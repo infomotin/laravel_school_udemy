@@ -41,11 +41,20 @@ class CategoryController extends Controller
 
         // object based data insert into table
 
-        $category = new Category;
-        $category->category_name = $request->category_name;
-        $category->user_id = Auth::user()->id;
-        $category->created_at= Carbon::now();
-        $category->save();
+        // $category = new Category;
+        // $category->category_name = $request->category_name;
+        // $category->user_id = Auth::user()->id;
+        // $category->created_at= Carbon::now();
+        // $category->save();
+
+        $data = array();
+        $data['category_name'] = $request->category_name;
+        $data['user_id']=Auth::user()->id;
+        $data['created_at'] = Carbon::now();
+        DB::table('categories')->insert($data);
+
+
+
 
         return Redirect()->back()->with('success','Category Inserted Successfully');
     }
