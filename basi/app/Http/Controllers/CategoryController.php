@@ -30,7 +30,7 @@ class CategoryController extends Controller
                 'category_name.max' => 'Dont Exite Your limite ',
 
         ]);
-
+        // model based data inseart Auto data field  Work
         // Category::insert(
         //     [
         //         'user_id'=>Auth::user()->id,
@@ -39,7 +39,7 @@ class CategoryController extends Controller
         //     ]
         // );
 
-        // object based data insert into table
+        // object based data insert into table Auto data field not Work part
 
         // $category = new Category;
         // $category->category_name = $request->category_name;
@@ -47,6 +47,7 @@ class CategoryController extends Controller
         // $category->created_at= Carbon::now();
         // $category->save();
 
+        // query bulder based data inseart Auto data field not Work
         $data = array();
         $data['category_name'] = $request->category_name;
         $data['user_id']=Auth::user()->id;
