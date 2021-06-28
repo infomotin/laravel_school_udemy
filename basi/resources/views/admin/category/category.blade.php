@@ -59,7 +59,7 @@
                                         </td>
                                         <td>
                                             <a href="{{ url('category/edit/'.$allC->id) }}" class="btn btn-info">Edit</a>
-                                            <a href="{{ url('soft/delete/'.$allC->id) }}" class="btn btn-danger">Delete</a>
+                                            <a href="{{ url('soft/delete/'.$allC->id) }}" class="btn btn-danger">Trash</a>
                                         </td>
                                     </tr>
                                 @endforeach
@@ -106,13 +106,13 @@
                 <div class="col-md-8">
                     <div class="card">
                         {{-- alert toast massage --}}
-                        @if (session('success'))
+                        {{-- @if (session('success'))
                             <div class="alert alert-success alert-dismissible fade show" role="alert">
                                 <strong> {{ session('success') }}</strong>
                                 <button type="button" class="btn-close" data-bs-dismiss="alert"
                                     aria-label="Close"></button>
                             </div>
-                        @endif
+                        @endif --}}
                         <div class="card-header">
                             <b>Trash List</b>
                         </div>
@@ -154,7 +154,7 @@
                                             @endif
                                         </td>
                                         <td>
-                                            <a href="{{ url('category/edit/'.$allC->id) }}" class="btn btn-info">Edit</a>
+                                            <a href="{{ url('category/restore/'.$allC->id) }}" class="btn btn-info">Restore</a>
                                             <a href="{{ url('category/delete/'.$allC->id) }}" class="btn btn-danger">Delete</a>
                                         </td>
                                     </tr>
@@ -162,7 +162,7 @@
 
                             </tbody>
                         </table>
-                        {{ $allcat->links() }}
+                        {{ $tashCategory->links() }}
                     </div>
 
                 </div>

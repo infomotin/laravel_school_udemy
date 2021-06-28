@@ -42,6 +42,8 @@ Route::get('category/edit/{id}', [CategoryController::class, 'editCategory']);
 Route::post('category/update/{id}', [CategoryController::class, 'updateCategory']);
 
 Route::get('soft/delete/{id}', [CategoryController::class, 'softCategory']);
+Route::get('category/restore/{id}', [CategoryController::class, 'restore']);
+Route::get('category/delete/{id}', [CategoryController::class, 'delete']);
 
 
 
