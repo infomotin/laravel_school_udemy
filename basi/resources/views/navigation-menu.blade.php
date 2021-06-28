@@ -19,6 +19,10 @@
                         All Category
                     </x-jet-nav-link>
 
+                    <x-jet-nav-link href="{{ route('category') }} ">
+                        Brand
+                    </x-jet-nav-link>
+
                 </div>
             </div>
 
