@@ -51,7 +51,7 @@ Route::post('/category/add', [CategoryController::class, 'addcategory'])->name('
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     // $user = User::all();
 
-    // query builder example
+    // query builder example form api based data views
     $user = DB::table('users')->get();
 
     return view('dashboard',compact('user'));

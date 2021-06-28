@@ -45,9 +45,11 @@
 
                                             </td>
                                             <td>
-
+                                                @if($allC->created_at == NULL)
+                                                <span class="text-danger">No Data Found </span>
+                                                @else
                                                 {{ $allC->created_at }}
-
+                                                @endif
                                             </td>
                                         </tr>
                                     @endforeach

@@ -15,8 +15,14 @@ class CategoryController extends Controller
         return "some thing";
     }
     public function allCat(){
+        // Query Builder based
+        $allcat = DB::table('categories')->latest()->paginate(2);
+        // Model with satatic class based
+        // $allcat = Category::latest()->get();
+        //object based data view
 
-        $allcat = DB::table('categories')->get();
+
+
         return view('admin.category.category', compact('allcat'));
     }
     public function addcategory(Request $request){
