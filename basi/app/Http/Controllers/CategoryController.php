@@ -29,11 +29,12 @@ class CategoryController extends Controller
 
         // Model with static class based using table join()
         $allcat = Category::latest()->paginate(5);
+        $tashCategory = Category::onlyTrashed()->latest()->paginate(3);
         //object based data view
 
 
 
-        return view('admin.category.category', compact('allcat'));
+        return view('admin.category.category', compact('allcat','tashCategory'));
     }
     public function addcategory(Request $request){
         $validated = $request->validate([
@@ -103,5 +104,10 @@ class CategoryController extends Controller
 
         return Redirect()->route('category')->with('success', 'Category Update Successfully');
 
+    }
+    public function softCategory($id){
+        $delete = Category::find($id)->delete();
+
+        return Redirect()->back()->with('success', 'Category Soft Delete Successfully');
     }
 }
