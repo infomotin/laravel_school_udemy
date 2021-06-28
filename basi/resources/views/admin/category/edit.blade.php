@@ -13,7 +13,7 @@
                         </div>
                         <div class="card-body">
 
-                            <form action=" " method="POST">
+                            <form action="{{ url('category/update/'.$category->id) }}" method="POST">
                                 @csrf
                                 <div class="form-group">
                                     <label for="exampleInputEmail1" class="m-2">Update Category Name</label>

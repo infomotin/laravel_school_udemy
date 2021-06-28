@@ -79,4 +79,12 @@ class CategoryController extends Controller
         $category = Category::find($id);
         return view('admin.category.edit',compact('category'));
     }
+    public function updateCategory(Request $request,$id){
+        $update = Category::find($id)->update([
+            'category_name' => $request->category_name,
+            'user_id' => Auth::user()->id
+        ]);
+        return Redirect()->route('category')->with('success', 'Category Update Successfully');
+
+    }
 }
