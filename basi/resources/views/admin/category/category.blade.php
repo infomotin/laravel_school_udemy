@@ -27,6 +27,7 @@
                                     <th scope="col">User Name</th>
                                     <th scope="col">Categoty Name</th>
                                     <th scope="col">Create Date</th>
+                                    <th scope="col">Actions</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -55,6 +56,10 @@
                                             @else
                                                 {{ Carbon\Carbon::parse($allC->created_at)->diffForHumans() }}
                                             @endif
+                                        </td>
+                                        <td>
+                                            <a href="" class="btn btn-info">Edit</a>
+                                            <a href="" class="btn btn-danger">Delete</a>
                                         </td>
                                     </tr>
                                 @endforeach
