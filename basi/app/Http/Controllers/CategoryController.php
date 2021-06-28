@@ -15,10 +15,20 @@ class CategoryController extends Controller
         return "some thing";
     }
     public function allCat(){
+        // table join with query builder
+        $allcat = DB::table('categories')
+        // where condithons as like
+        ->join('users','categories.user_id', 'users.id')
+        //select field conditions
+        ->select('categories.*','users.name')
+        ->latest()->paginate(2);
+
         // Query Builder based
         // $allcat = DB::table('categories')->latest()->paginate(2);
-        // Model with satatic class based
-        $allcat = Category::latest()->paginate(5);
+
+
+        // Model with static class based using table join()
+        // $allcat = Category::latest()->paginate(5);
         //object based data view
 
 
@@ -32,8 +42,8 @@ class CategoryController extends Controller
         ],
         [
                 'category_name.required' => 'Place Input Category Name ',
-                'category_name.unique' => 'Duplicat ',
-                'category_name.max' => 'Dont Exite Your limite ',
+                'category_name.unique' => 'Duplicate ',
+                'category_name.max' => 'dont Exite Your limit ',
 
         ]);
         // model based data inseart Auto data field  Work

@@ -49,7 +49,7 @@
                                                 @if($allC->created_at == NULL)
                                                 <span class="text-danger">No Data Found </span>
                                                 @else
-                                                {{ $allC->created_at }}
+                                                {{ Carbon\Carbon::parse($allC->created_at)->diffForHumans() }}
                                                 @endif
                                             </td>
                                         </tr>
