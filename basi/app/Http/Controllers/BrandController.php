@@ -87,13 +87,15 @@ class BrandController extends Controller
 
 
     }
-    public function editBrand(Request $request, $id)
+    public function editBrand($id)
     {
-        return;
+        $loadEdit = Brand::find($id);
+        return view('admin.brand.editbrand',compact('loadEdit'));
     }
     public function updateBrand(Request $request, $id)
     {
-        return;
+
+        return view('');
     }
     public function delete(Request $request, $id)
     {
