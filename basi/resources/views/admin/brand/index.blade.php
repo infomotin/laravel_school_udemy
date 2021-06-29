@@ -11,7 +11,7 @@
                     <div class="card">
                         {{-- alert toast massage --}}
                         @if (session('success'))
-                            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                            <div class="alert alert-info alert-dismissible fade show" role="alert">
                                 <strong> {{ session('success') }}</strong>
                                 <button type="button" class="btn-close" data-bs-dismiss="alert"
                                     aria-label="Close"></button>
@@ -24,9 +24,9 @@
                             <thead>
                                 <tr>
                                     <th scope="col">SL No</th>
-                                    <th scope="col">Brand Photo </th>
                                     <th scope="col">Brand Name </th>
-                                    <th scope="col">Create Date</th>
+                                    <th scope="col">Create Date </th>
+                                    <th scope="col">Brand Photo</th>
                                     <th scope="col">Actions</th>
                                 </tr>
                             </thead>
@@ -48,14 +48,14 @@
 
                                         <td>
 
-                                            {{ $band->created_at }}
+                                            {{ Carbon\Carbon::parse($band->created_at)->diffForHumans() }}
 
                                         </td>
                                         <td>
                                             @if ($band->brand_img == null)
                                                 <span class="text-danger">No Image Found </span>
                                             @else
-                                                {{ $band->brand_img }}
+                                                <img src="{{ asset($band->brand_img) }}" style="height:40px; width:50px"/>
                                             @endif
                                         </td>
                                         <td>

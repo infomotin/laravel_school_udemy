@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Carbon;
 use App\Models\Brand;
 
 use Illuminate\Http\Request;
@@ -10,9 +11,10 @@ use Illuminate\Http\Request;
 class BrandController extends Controller
 {
     //declaring Functions
-    public function AllBrand(){
+    public function AllBrand()
+    {
         $allbrand = Brand::latest()->paginate(5);
-        return view('admin.brand.index',compact('allbrand'));
+        return view('admin.brand.index', compact('allbrand'));
     }
     public function AddBrand(Request $request)
     {
@@ -30,14 +32,28 @@ class BrandController extends Controller
 
             ]
         );
+
         //image part
         $brand_img = $request->file('brand_img');
         //generate image name
         $image_gen_name = hexdec(uniqid());
         $image_ext = strtolower($brand_img->getClientOriginalExtension());
-        $image_name = $image_gen_name.'.'.$image_ext;
+        $image_name = $image_gen_name . '.' . $image_ext;
         //image upload Locations
-
+        $upload_image_path = 'image/brand/';
+        // for data base colum
+        $last_image =  $upload_image_path . $image_name;
+        // move this image in public folder_name with rename
+        $brand_img->move($upload_image_path, $image_name);
+        //insert image on db
+        Brand::insert(
+            [
+                'brand_name' => $request->brand_name,
+                'brand_img' => $last_image,
+                'created_at' => Carbon::now(),
+            ]
+        );
+        return Redirect()->back()->with('success', 'Brand Inserted Successfully');
 
 
         // $data = array();
@@ -47,7 +63,7 @@ class BrandController extends Controller
         // $data['created_at'] = Carbon::now();
         // DB::table('categories')->insert($data);
 
-          // model based data inseart Auto data field  Work
+        // model based data inseart Auto data field  Work
         // Category::insert(
         //     [
         //         'user_id'=>Auth::user()->id,
@@ -69,10 +85,11 @@ class BrandController extends Controller
 
 
 
-        return Redirect()->back()->with('success', 'Brand Inserted Successfully');
+
     }
-    public function editBrand(Request $request,$id){
-        return ;
+    public function editBrand(Request $request, $id)
+    {
+        return;
     }
     public function updateBrand(Request $request, $id)
     {
