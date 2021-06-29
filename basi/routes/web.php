@@ -36,7 +36,7 @@ Route::get('brand/all', [BrandController::class, 'AllBrand'])->name('all.brand')
 Route::post('brand/add', [BrandController::class, 'AddBrand'])->name('store.band');
 Route::get('band/edit/{id}', [BrandController::class, 'editBrand']);
 Route::post('band/update/{id}', [BrandController::class, 'updateBrand']);
-Route::post('band/delete/{id}', [BrandController::class, 'delete']);
+Route::get('band/delete/{id}', [BrandController::class, 'delete']);
 
 
 // Route::get('/contract', [ContractController::class, 'index'])->middleware('age');
