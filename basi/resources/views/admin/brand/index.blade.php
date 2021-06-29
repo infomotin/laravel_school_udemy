@@ -32,41 +32,42 @@
                             </thead>
                             <tbody>
                                 {{-- @php($i = 1) --}}
-                                {{-- @foreach ($allcat as $allC) --}}
+                                @foreach ($allbrand as $band)
                                     <tr>
                                         <th scope="row">
                                             {{-- using sirial number generate --}}
-                                            {{-- {{ $allcat->firstItem() + $loop->index }} --}}
+                                            {{ $allbrand->firstItem() + $loop->index }}
                                         </th>
                                         <td>
                                             {{-- this are using model based join table view --}}
-                                            {{-- {{ $allC->user->name }} --}}
+                                            {{ $band->brand_name }}
                                             {{-- quere builder based view --}}
                                             {{-- {{ $allC->user->name }} --}}
 
                                         </td>
+
                                         <td>
 
-                                            {{-- {{ $allC->category_name }} --}}
+                                            {{ $band->created_at }}
 
                                         </td>
                                         <td>
-                                            {{-- @if ($allC->created_at == null)
-                                                <span class="text-danger">No Data Found </span>
+                                            @if ($band->brand_img == null)
+                                                <span class="text-danger">No Image Found </span>
                                             @else
-                                                {{ Carbon\Carbon::parse($allC->created_at)->diffForHumans() }}
-                                            @endif --}}
+                                                {{ $band->brand_img }}
+                                            @endif
                                         </td>
                                         <td>
-                                            {{-- <a href="{{ url('category/edit/'.$allC->id) }}" class="btn btn-info">Edit</a>
-                                            <a href="{{ url('soft/delete/'.$allC->id) }}" class="btn btn-danger">Trash</a> --}}
+                                            <a href="{{ url('band/edit/'.$band->id) }}" class="btn btn-info">Edit</a>
+                                            <a href="{{ url('band/delete/'.$band->id) }}" class="btn btn-danger">Delete</a>
                                         </td>
                                     </tr>
-                                {{-- @endforeach --}}
+                                @endforeach
 
                             </tbody>
                         </table>
-                        {{-- {{ $allcat->links() }} --}}
+                        {{ $allbrand->links() }}
                     </div>
 
                 </div>
@@ -77,11 +78,11 @@
                         </div>
                         <div class="card-body">
 
-                            <form action="{{ route('store.cat') }}" method="POST">
+                            <form action="{{ route('store.band') }}" method="POST">
                                 @csrf
                                 <div class="form-group">
                                     <label for="exampleInputEmail1" class="m-2">Brand Name</label>
-                                    <input type="text" class="form-control" id="exampleInputEmail1" name="category_name"
+                                    <input type="text" class="form-control" id="exampleInputEmail1" name="brand_name"
                                         aria-describedby="emailHelp" placeholder="Enter Brand Name">
                                     {{-- validations part --}}
                                     @error('cat_name')

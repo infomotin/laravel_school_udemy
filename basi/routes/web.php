@@ -23,6 +23,7 @@ Route::get('/stuff', function () {
 // Route::get('path','controllerName@methodName');
 Route::get('/contractj-ej-jehto', [ContractController::class, 'index'])->name('name');
 // Route::get('/contract', [ContractController::class, 'index'])->middleware('age');
+// category
 Route::get('/category', [CategoryController::class, 'allCat'])->name('category');
 Route::post('/category/add', [CategoryController::class, 'addcategory'])->name('store.cat');
 Route::get('category/edit/{id}', [CategoryController::class, 'editCategory']);
@@ -31,7 +32,11 @@ Route::get('soft/delete/{id}', [CategoryController::class, 'softCategory']);
 Route::get('category/restore/{id}', [CategoryController::class, 'restore']);
 Route::get('category/delete/{id}', [CategoryController::class, 'delete']);
 // brand some thing doing
-Route::get('/brand/all', [BrandController::class, 'AllBrand'])->name('all.brand');
+Route::get('brand/all', [BrandController::class, 'AllBrand'])->name('all.brand');
+Route::get('brand/add', [BrandController::class, 'AddBrand'])->name('store.band');
+Route::post('band/edit/{id}', [BrandController::class, 'editBrand']);
+Route::post('band/update/{id}', [BrandController::class, 'updateBrand']);
+Route::post('band/delete/{id}', [BrandController::class, 'delete']);
 
 
 // Route::get('/contract', [ContractController::class, 'index'])->middleware('age');
