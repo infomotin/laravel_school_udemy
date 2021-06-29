@@ -25,7 +25,7 @@
                                 <tr>
                                     <th scope="col">SL No</th>
                                     <th scope="col">User Name</th>
-                                    <th scope="col">Categoty Name</th>
+                                    <th scope="col">Brand Name</th>
                                     <th scope="col">Create Date</th>
                                     <th scope="col">Actions</th>
                                 </tr>
@@ -82,7 +82,7 @@
                                 <div class="form-group">
                                     <label for="exampleInputEmail1" class="m-2">Brand Name</label>
                                     <input type="text" class="form-control" id="exampleInputEmail1" name="category_name"
-                                        aria-describedby="emailHelp" placeholder="Enter Category Name">
+                                        aria-describedby="emailHelp" placeholder="Enter Brand Name">
                                     {{-- validations part --}}
                                     @error('cat_name')
                                         <span class="text-danger">{{ $message }}</span>
@@ -100,88 +100,7 @@
             </div>
         </div>
         {{-- another  --}}
-        <div class="container">
-            <div class="row">
 
-                <div class="col-md-8">
-                    <div class="card">
-                        {{-- alert toast massage --}}
-                        {{-- @if (session('success'))
-                            <div class="alert alert-success alert-dismissible fade show" role="alert">
-                                <strong> {{ session('success') }}</strong>
-                                <button type="button" class="btn-close" data-bs-dismiss="alert"
-                                    aria-label="Close"></button>
-                            </div>
-                        @endif --}}
-                        <div class="card-header">
-                            <b>Trash List</b>
-                        </div>
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th scope="col">SL No</th>
-                                    <th scope="col">User Name</th>
-                                    <th scope="col">Categoty Name</th>
-                                    <th scope="col">Create Date</th>
-                                    <th scope="col">Actions</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {{-- @php($i = 1) --}}
-                                {{-- @foreach ($tashCategory as $allC) --}}
-                                    <tr>
-                                        <th scope="row">
-                                            {{-- using sirial number generate --}}
-                                            {{-- {{ $tashCategory->firstItem() + $loop->index }} --}}
-                                        </th>
-                                        <td>
-                                            {{-- this are using model based join table view --}}
-                                            {{-- {{ $allC->user->name }} --}}
-                                            {{-- quere builder based view --}}
-                                            {{-- {{ $allC->user->name }} --}}
-
-                                        </td>
-                                        <td>
-
-                                            {{-- {{ $allC->category_name }} --}}
-
-                                        </td>
-                                        <td>
-                                            {{-- @if ($allC->created_at == null)
-                                                <span class="text-danger">No Data Found </span>
-                                            @else
-                                                {{ Carbon\Carbon::parse($allC->created_at)->diffForHumans() }}
-                                            @endif --}}
-                                        </td>
-                                        <td>
-                                            <a href="
-                                            {{-- {{
-                                                //  url('category/restore/'.$allC->id)
-                                                 }} --}}
-                                                 " class="btn btn-info">Restore</a>
-                                            <a href="
-                                            {{-- {{
-                                            //  url('category/delete/'.$allC->id)
-                                             }} --}}
-                                             " class="btn btn-danger">Delete</a>
-                                        </td>
-                                    </tr>
-                                {{-- @endforeach --}}
-
-                            </tbody>
-                        </table>
-                        {{-- {{ $tashCategory->links() }} --}}
-                    </div>
-
-                </div>
-                <div class="col-md-4">
-
-                </div>
-
-
-
-            </div>
-        </div>
 
 
 
