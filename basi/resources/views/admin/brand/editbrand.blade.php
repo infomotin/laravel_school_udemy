@@ -15,6 +15,7 @@
 
                             <form action="{{ url('band/update/'.$loadEdit->id) }}" method="POST" enctype="multipart/form-data">
                                 @csrf
+                                <input type="hidden" name="old_image" value="{{ $loadEdit->brand_img }}">
                                 <div class="form-group">
                                     <label for="exampleInputEmail1" class="m-2">Brand Name</label>
                                     <input type="text" class="form-control" id="exampleInputEmail1" name="brand_name"

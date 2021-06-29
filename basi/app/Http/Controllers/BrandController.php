@@ -97,18 +97,18 @@ class BrandController extends Controller
         $validated = $request->validate(
             [
                 'brand_name' => 'required|unique:brands|max:255|min:6',
-                'brand_img' => 'required|mimes:jpg,png,jpeg',
+
 
             ],
             [
                 'brand_name.required' => 'Place Input Brand Name ',
-                'brand_name.unique' => 'Duplicate!',
-                'brand_name.max' => 'dont Exite Your limit ',
-                'brand_img.required' => 'Place upload Image',
+                'brand_name.min' => 'Six Minimum',
+
 
             ]
         );
         //image part
+        $old_image = $request->old_image;
         $brand_img = $request->file('brand_img');
         //generate image name
         $image_gen_name = hexdec(uniqid());
@@ -120,6 +120,8 @@ class BrandController extends Controller
         $last_image =  $upload_image_path . $image_name;
         // move this image in public folder_name with rename
         $brand_img->move($upload_image_path, $image_name);
+        //unlink image
+        unlink($old_image);
         //insert image on db
 
         $data = array();
