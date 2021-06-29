@@ -33,7 +33,7 @@ Route::get('category/restore/{id}', [CategoryController::class, 'restore']);
 Route::get('category/delete/{id}', [CategoryController::class, 'delete']);
 // brand some thing doing
 Route::get('brand/all', [BrandController::class, 'AllBrand'])->name('all.brand');
-Route::get('brand/add', [BrandController::class, 'AddBrand'])->name('store.band');
+Route::post('brand/add', [BrandController::class, 'AddBrand'])->name('store.band');
 Route::post('band/edit/{id}', [BrandController::class, 'editBrand']);
 Route::post('band/update/{id}', [BrandController::class, 'updateBrand']);
 Route::post('band/delete/{id}', [BrandController::class, 'delete']);

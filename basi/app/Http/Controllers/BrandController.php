@@ -18,18 +18,36 @@ class BrandController extends Controller
     {
         $validated = $request->validate(
             [
-                'brand_name' => 'required|unique:brands|max:255',
-                'brand_img' => 'required|unique:brands|max:255',
+                'brand_name' => 'required|unique:brands|max:255|min:6',
+                'brand_img' => 'required|mimes:jpg,png,jpeg',
 
             ],
             [
-                'category_name.required' => 'Place Input Category Name ',
-                'category_name.unique' => 'Duplicate ',
-                'category_name.max' => 'dont Exite Your limit ',
+                'brand_name.required' => 'Place Input Brand Name ',
+                'brand_name.unique' => 'Duplicate!',
+                'brand_name.max' => 'dont Exite Your limit ',
+                'brand_img.required' => 'Place upload Image',
 
             ]
         );
-        // model based data inseart Auto data field  Work
+        //image part
+        $brand_img = $request->file('brand_img');
+        //generate image name
+        $image_gen_name = hexdec(uniqid());
+        $image_ext = strtolower($brand_img->getClientOriginalExtension());
+        $image_name = $image_gen_name.'.'.$image_ext;
+        //image upload Locations
+
+
+
+        // $data = array();
+        // $data['brand_name'] = $request->category_name;
+        // $data['brand_img'] = $request->category_name;
+
+        // $data['created_at'] = Carbon::now();
+        // DB::table('categories')->insert($data);
+
+          // model based data inseart Auto data field  Work
         // Category::insert(
         //     [
         //         'user_id'=>Auth::user()->id,
@@ -47,11 +65,6 @@ class BrandController extends Controller
         // $category->save();
 
         // query bulder based data inseart Auto data field not Work
-        $data = array();
-        $data['category_name'] = $request->category_name;
-        $data['user_id'] = Auth::user()->id;
-        $data['created_at'] = Carbon::now();
-        DB::table('categories')->insert($data);
 
 
 

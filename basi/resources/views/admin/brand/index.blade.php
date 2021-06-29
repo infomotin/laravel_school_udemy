@@ -78,7 +78,7 @@
                         </div>
                         <div class="card-body">
 
-                            <form action="{{ route('store.band') }}" method="POST">
+                            <form action="{{ route('store.band') }}" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 <div class="form-group">
                                     <label for="exampleInputEmail1" class="m-2">Brand Name</label>
@@ -88,15 +88,17 @@
                                     @error('brand_name')
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
-                                    {{-- validations part end --}}
-                                    <label for="exampleInputEmail1" class="m-2">Image</label>
-                                    <input type="text" class="form-control" id="exampleInputEmail1" name="brand_img"
-                                        aria-describedby="emailHelp" placeholder="Enter Brand Name">
+
+                                </div>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1" class="m-2">Brand Image</label>
+                                    <input type="file" class="form-control" id="exampleInputEmail1" name="brand_img"
+                                        aria-describedby="emailHelp" placeholder="Upload Image">
                                     {{-- validations part --}}
                                     @error('brand_img')
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
-                                    {{-- validations part end --}}
+
                                 </div>
                                 <button type="submit" class="btn btn-primary">Add Brand</button>
                             </form>
