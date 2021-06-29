@@ -24,8 +24,8 @@
                             <thead>
                                 <tr>
                                     <th scope="col">SL No</th>
-                                    <th scope="col">User Name</th>
-                                    <th scope="col">Brand Name</th>
+                                    <th scope="col">Brand Photo </th>
+                                    <th scope="col">Brand Name </th>
                                     <th scope="col">Create Date</th>
                                     <th scope="col">Actions</th>
                                 </tr>
@@ -85,7 +85,15 @@
                                     <input type="text" class="form-control" id="exampleInputEmail1" name="brand_name"
                                         aria-describedby="emailHelp" placeholder="Enter Brand Name">
                                     {{-- validations part --}}
-                                    @error('cat_name')
+                                    @error('brand_name')
+                                        <span class="text-danger">{{ $message }}</span>
+                                    @enderror
+                                    {{-- validations part end --}}
+                                    <label for="exampleInputEmail1" class="m-2">Image</label>
+                                    <input type="text" class="form-control" id="exampleInputEmail1" name="brand_img"
+                                        aria-describedby="emailHelp" placeholder="Enter Brand Name">
+                                    {{-- validations part --}}
+                                    @error('brand_img')
                                         <span class="text-danger">{{ $message }}</span>
                                     @enderror
                                     {{-- validations part end --}}

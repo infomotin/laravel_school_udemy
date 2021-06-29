@@ -11,7 +11,7 @@ class BrandController extends Controller
 {
     //declaring Functions
     public function AllBrand(){
-        $allBrand = Brand::latest()->paginate(5);
+        $allbrand = Brand::latest()->paginate(5);
         return view('admin.brand.index',compact('allbrand'));
     }
     public function AddBrand(Request $request)
