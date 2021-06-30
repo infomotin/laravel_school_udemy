@@ -97,21 +97,16 @@ class BrandController extends Controller
         $validated = $request->validate(
             [
                 'brand_name' => 'max:255|min:6',
-
-
             ],
             [
-
                 'brand_name.min' => 'Six Minimum',
-
-
             ]
         );
         //image part
         $old_image = $request->old_image;
         $brand_img = $request->file('brand_img');
-        //generate image name
 
+        //generate image name
         if($brand_img ){
             $image_gen_name = hexdec(uniqid());
             $image_ext = strtolower($brand_img->getClientOriginalExtension());
