@@ -96,12 +96,12 @@ class BrandController extends Controller
     {
         $validated = $request->validate(
             [
-                'brand_name' => 'required|unique:brands|max:255|min:6',
+                'brand_name' => 'max:255|min:6',
 
 
             ],
             [
-                'brand_name.required' => 'Place Input Brand Name ',
+
                 'brand_name.min' => 'Six Minimum',
 
 
@@ -111,26 +111,39 @@ class BrandController extends Controller
         $old_image = $request->old_image;
         $brand_img = $request->file('brand_img');
         //generate image name
-        $image_gen_name = hexdec(uniqid());
-        $image_ext = strtolower($brand_img->getClientOriginalExtension());
-        $image_name = $image_gen_name . '.' . $image_ext;
-        //image upload Locations
-        $upload_image_path = 'image/brand/';
-        // for data base colum
-        $last_image =  $upload_image_path . $image_name;
-        // move this image in public folder_name with rename
-        $brand_img->move($upload_image_path, $image_name);
-        //unlink image
-        unlink($old_image);
-        //insert image on db
 
-        $data = array();
-        $data['brand_name'] = $request->brand_name;
-        $data['brand_img'] = $last_image;
-        $data['updated_at'] = Carbon::now();
-        DB::table('brands')->where('id', $id)->update($data);
+        if($brand_img ){
+            $image_gen_name = hexdec(uniqid());
+            $image_ext = strtolower($brand_img->getClientOriginalExtension());
+            $image_name = $image_gen_name . '.' . $image_ext;
+            //image upload Locations
+            $upload_image_path = 'image/brand/';
+            // for data base colum
+            $last_image =  $upload_image_path . $image_name;
+            // move this image in public folder_name with rename
+            $brand_img->move($upload_image_path, $image_name);
+            //unlink image
+            unlink($old_image);
+            //insert image on db
 
-        return Redirect()->route('all.brand')->with('success', 'Brand Update Successfully');
+            $data = array();
+            $data['brand_name'] = $request->brand_name;
+            $data['brand_img'] = $last_image;
+            $data['updated_at'] = Carbon::now();
+            DB::table('brands')->where('id', $id)->update($data);
+
+            return Redirect()->back()->with('success', 'Brand update Successfully');
+        }else{
+            $data = array();
+            $data['brand_name'] = $request->brand_name;
+
+            $data['updated_at'] = Carbon::now();
+            DB::table('brands')->where('id', $id)->update($data);
+
+            return Redirect()->back()->with('success', 'Brand update Successfully');
+        }
+
+
     }
     public function delete($id)
     {

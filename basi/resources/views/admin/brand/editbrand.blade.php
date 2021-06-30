@@ -8,6 +8,13 @@
             <div class="row">
                 <div class="col-md-4">
                     <div class="card">
+                        @if (session('success'))
+                            <div class="alert alert-info alert-dismissible fade show" role="alert">
+                                <strong> {{ session('success') }}</strong>
+                                <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                    aria-label="Close"></button>
+                            </div>
+                        @endif
                         <div class="card-header">
                             Edit Brand
                         </div>
@@ -26,16 +33,7 @@
                                     @enderror
 
                                 </div>
-                                 <div class="form-group">
-                                    <label for="exampleInputEmail1" class="m-2">Load Image</label>
-                                    <img src="{{ asset($loadEdit->brand_img) }}" style="height:150px; width:200px"/>
 
-                                    {{-- validations part --}}
-                                    @error('brand_img')
-                                        <span class="text-danger">{{ $message }}</span>
-                                    @enderror
-
-                                </div>
                                 <div class="form-group">
                                     <label for="exampleInputEmail1" class="m-2">Brand Image</label>
 
@@ -47,7 +45,17 @@
                                     @enderror
 
                                 </div>
-                                <button type="submit" class="btn btn-primary">Edit Brand</button>
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1" class="m-2">Load Image</label>
+                                    <img src="{{ asset($loadEdit->brand_img) }}" style="height:150px; width:200px"/>
+
+                                    {{-- validations part --}}
+                                    @error('brand_img')
+                                        <span class="text-danger">{{ $message }}</span>
+                                    @enderror
+
+                                </div>
+                                <button type="submit" class="btn btn-primary">Update Brand</button>
                             </form>
                         </div>
                     </div>

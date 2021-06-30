@@ -34,7 +34,7 @@ Route::get('category/delete/{id}', [CategoryController::class, 'delete']);
 // brand some thing doing
 Route::get('brand/all', [BrandController::class, 'AllBrand'])->name('all.brand');
 Route::post('brand/add', [BrandController::class, 'AddBrand'])->name('store.band');
-Route::get('band/edit/{id}', [BrandController::class, 'editBrand']);
+Route::get('band/edit/{id}', [BrandController::class, 'editBrand'])->name('band.edit');
 Route::post('band/update/{id}', [BrandController::class, 'updateBrand']);
 Route::get('band/delete/{id}', [BrandController::class, 'delete']);
 
