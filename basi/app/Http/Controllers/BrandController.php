@@ -132,7 +132,7 @@ class BrandController extends Controller
             $data['updated_at'] = Carbon::now();
             DB::table('brands')->where('id', $id)->update($data);
 
-            return Redirect()->back()->with('success', 'Brand update Successfully');
+            return Redirect()->back()->with('success', 'Brand Name Successfully');
         }else{
             $data = array();
             $data['brand_name'] = $request->brand_name;
@@ -140,14 +140,19 @@ class BrandController extends Controller
             $data['updated_at'] = Carbon::now();
             DB::table('brands')->where('id', $id)->update($data);
 
-            return Redirect()->back()->with('success', 'Brand update Successfully');
+            return Redirect()->back()->with('success', 'Brand Image Successfully');
         }
 
 
     }
     public function delete($id)
     {
+        // delete image from local file
+        $save_image = Brand::find($id);
+        $save_old_image = $save_image->brand_img;
+        unlink($$save_old_image);
+        //delete old image db
         $delete = Brand::find($id)->forceDelete();
-        return Redirect()->route('all.brand')->with('success', 'Brand Delete Successfully');
+        return Redirect()->back()->with('success', 'Brand Delete Successfully');
     }
 }
