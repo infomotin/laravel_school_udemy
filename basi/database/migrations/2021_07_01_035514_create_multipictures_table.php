@@ -15,6 +15,7 @@ class CreateMultipicturesTable extends Migration
     {
         Schema::create('multipictures', function (Blueprint $table) {
             $table->id();
+            $table->string('image');
             $table->timestamps();
         });
     }

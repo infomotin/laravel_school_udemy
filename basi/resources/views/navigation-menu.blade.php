@@ -23,6 +23,10 @@
                         Brand
                     </x-jet-nav-link>
 
+                    <x-jet-nav-link href="{{ route('multi.image') }} ">
+                        Upload multiple Pictures
+                    </x-jet-nav-link>
+
                 </div>
             </div>
 
