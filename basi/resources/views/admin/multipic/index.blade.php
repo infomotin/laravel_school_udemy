@@ -1,21 +1,27 @@
 <x-app-layout>
     <x-slot name="header">
-        <b> Multipicture  </b>
+        <b> Multipicture </b>
     </x-slot>
-
     <div class="py-12">
         <div class="container">
             <div class="row">
                 <div class="col-md-8">
-                    <div class="card">
-
+                    <div class="card-group">
+                        @foreach ($Images as $image)
+                            <div class="col-md-4 mt-5">
+                                <div class="card">
+                                    <img src="{{ asset($image->image)}}">
+                                </div>
+                            </div>
+                        @endforeach
                     </div>
+                    {{ $Images->links() }}
                 </div>
                 <div class="col-md-4">
                     <div class="card">
                         <div class="card-header">
                             Multi Image
-                         </div>
+                        </div>
                         <div class="card-body">
 
                             <form action="{{ route('save.images') }} " method="POST" enctype="multipart/form-data">
@@ -35,15 +41,8 @@
                         </div>
                     </div>
                 </div>
-
-
-
             </div>
         </div>
-        {{-- another  --}}
-
-
-
-
+        {{-- another --}}
     </div>
 </x-app-layout>
