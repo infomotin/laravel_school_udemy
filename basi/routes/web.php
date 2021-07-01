@@ -3,6 +3,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContractController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\BrandController;
+use App\Http\Controllers\MultiController;
 // for querey builder
 use Illuminate\Support\Facades\DB;
 // for working with model
@@ -38,7 +39,7 @@ Route::get('band/edit/{id}', [BrandController::class, 'editBrand'])->name('band.
 Route::post('band/update/{id}', [BrandController::class, 'updateBrand']);
 Route::get('band/delete/{id}', [BrandController::class, 'delete']);
 //multi picture upload
-Route::get('multiphoto/all',[BrandController::class, 'AllBrand'])->name('multi.image');
+Route::get('multiphoto/all',[MultiController::class, 'AllImage'])->name('multi.image');
 
 
 // Route::get('/contract', [ContractController::class, 'index'])->middleware('age');
