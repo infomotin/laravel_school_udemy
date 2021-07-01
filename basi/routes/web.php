@@ -40,6 +40,8 @@ Route::post('band/update/{id}', [BrandController::class, 'updateBrand']);
 Route::get('band/delete/{id}', [BrandController::class, 'delete']);
 //multi picture upload
 Route::get('multiphoto/all',[MultiController::class, 'AllImage'])->name('multi.image');
+Route::post('multiphoto/add', [MultiController::class, 'AddImages'])->name('save.images');
+
 
 
 // Route::get('/contract', [ContractController::class, 'index'])->middleware('age');
