@@ -11,8 +11,9 @@ use Auth;
 
 class CategoryController extends Controller
 {
-    public function index(){
-        return "some thing";
+    public function __construct()
+    {
+        $this->middleware('auth');
     }
     public function allCat(){
         // table join with query builder
