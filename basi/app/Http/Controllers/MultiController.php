@@ -10,7 +10,12 @@ use Illuminate\Http\Request;
 use Intervention\Image\ImageManagerStatic as Image;
 
 class MultiController extends Controller
+
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     //write public functions
     public function AllImage(){
         $Images = multipicture::latest()->paginate(6);
