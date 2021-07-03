@@ -53,8 +53,9 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 
     return view('dashboard',compact('user'));
 })->name('dashboard');
-// for email verification
 
+
+// for email verification
 Route::get('/email/verify',
     function () {
         return view('auth.verify-email');
