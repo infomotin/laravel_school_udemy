@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\DB;
 // for working with model
 use App\Models\User;
 Route::get('/', function () {
-    return view('home');
+    return view('home1');
 });
 Route::get('/about', function () {
     return view('about');
