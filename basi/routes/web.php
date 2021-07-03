@@ -51,7 +51,7 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     // query builder example form api based data views
     $user = DB::table('users')->get();
 
-    return view('dashboard',compact('user'));
+    return view('admin.index',compact('user'));
 })->name('dashboard');
 
 
