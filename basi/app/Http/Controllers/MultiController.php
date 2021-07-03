@@ -2,8 +2,10 @@
 namespace App\Http\Controllers;
 use App\Models\multipicture;
 use Illuminate\Support\Carbon;
+// use App\Http\Controllers\Auth;
 // use App\Http\Controllers\Image;
 use Illuminate\Http\Request;
+use Auth;
 // include composer autoload
 // require 'vendor/autoload.php';
 // import the Intervention Image Manager Class
@@ -39,5 +41,9 @@ class MultiController extends Controller
         }
 
         return Redirect()->back()->with('success', 'Brand Inserted Successfully');
+    }
+    public function logout(){
+        Auth::logout();
+        return Redirect()->route('login')->with('success', 'Yor Are Logout');
     }
 }

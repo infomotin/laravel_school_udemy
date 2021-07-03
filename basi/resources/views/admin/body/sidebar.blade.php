@@ -548,7 +548,7 @@
 
                 <hr class="separator" />
 
-                <div class="sidebar-footer">
+                {{-- <div class="sidebar-footer">
                     <div class="sidebar-footer-content">
                         <h6 class="text-uppercase">
                             Cpu Uses <span class="float-right">40%</span>
@@ -563,6 +563,6 @@
                             <div class="progress-bar progress-bar-warning" style="width: 65%;" role="progressbar"></div>
                         </div>
                     </div>
-                </div>
+                </div> --}}
             </div>
         </aside>

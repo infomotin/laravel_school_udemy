@@ -61,3 +61,5 @@ Route::get('/email/verify',
         return view('auth.verify-email');
     }
 )->middleware('auth')->name('verification.notice');
+
+Route::get('user/logout',[MultiController::class,'logout'])->name('user.logout');
