@@ -15,59 +15,44 @@
                                 <path class="logo-fill-white" fill="#FFF" d="M11 4v25l8 4V0z" />
                             </g>
                         </svg>
-                        <span class="brand-name">Sleek Dashboard</span>
+                        <span class="brand-name">Easy Dashboard</span>
                     </a>
                 </div>
                 <!-- begin sidebar scrollbar -->
                 <div class="sidebar-scrollbar">
-
                     <!-- sidebar menu -->
                     <ul class="nav sidebar-inner" id="sidebar-menu">
-
-
-
                         <li class="has-sub active expand">
                             <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse"
                                 data-target="#dashboard" aria-expanded="false" aria-controls="dashboard">
                                 <i class="mdi mdi-view-dashboard-outline"></i>
-                                <span class="nav-text">Dashboard</span> <b class="caret"></b>
+                                <span class="nav-text">Home</span> <b class="caret"></b>
                             </a>
                             <ul class="collapse show" id="dashboard" data-parent="#sidebar-menu">
                                 <div class="sub-menu">
-
-
-
                                     <li class="active">
                                         <a class="sidenav-item-link" href="index.html">
-                                            <span class="nav-text">Ecommerce</span>
-
+                                            <span class="nav-text">Slider </span>
                                         </a>
                                     </li>
-
-
-
-
-
-
-                                    <li>
+                                    <li class="active">
+                                        <a class="sidenav-item-link" href="index.html">
+                                            <span class="nav-text">Home About </span>
+                                        </a>
+                                    </li>
+                                    <li class="active">
                                         <a class="sidenav-item-link" href="analytics.html">
-                                            <span class="nav-text">Analytics</span>
-
-                                            <span class="badge badge-success">new</span>
-
+                                            <span class="nav-text">Home Portfolio </span>
                                         </a>
                                     </li>
-
-
-
-
+                                    <li class="active">
+                                        <a class="sidenav-item-link" href="{{ route('all.brand') }}">
+                                            <span class="nav-text">Home Brand </span>
+                                        </a>
+                                    </li>
                                 </div>
                             </ul>
                         </li>
-
-
-
-
 
                         <li class="has-sub">
                             <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse"
@@ -77,8 +62,6 @@
                             </a>
                             <ul class="collapse" id="ui-elements" data-parent="#sidebar-menu">
                                 <div class="sub-menu">
-
-
                                     <li class="has-sub">
                                         <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse"
                                             data-target="#components" aria-expanded="false" aria-controls="components">
@@ -86,94 +69,69 @@
                                         </a>
                                         <ul class="collapse" id="components">
                                             <div class="sub-menu">
-
                                                 <li>
                                                     <a href="alert.html">Alert</a>
                                                 </li>
-
                                                 <li>
                                                     <a href="badge.html">Badge</a>
                                                 </li>
-
                                                 <li>
                                                     <a href="breadcrumb.html">Breadcrumb</a>
                                                 </li>
-
                                                 <li>
                                                     <a href="button-default.html">Button Default</a>
                                                 </li>
-
                                                 <li>
                                                     <a href="button-dropdown.html">Button Dropdown</a>
                                                 </li>
-
                                                 <li>
                                                     <a href="button-group.html">Button Group</a>
                                                 </li>
-
                                                 <li>
                                                     <a href="button-social.html">Button Social</a>
                                                 </li>
-
                                                 <li>
                                                     <a href="button-loading.html">Button Loading</a>
                                                 </li>
-
                                                 <li>
                                                     <a href="card.html">Card</a>
                                                 </li>
-
                                                 <li>
                                                     <a href="carousel.html">Carousel</a>
                                                 </li>
-
                                                 <li>
                                                     <a href="collapse.html">Collapse</a>
                                                 </li>
-
                                                 <li>
                                                     <a href="list-group.html">List Group</a>
                                                 </li>
-
                                                 <li>
                                                     <a href="modal.html">Modal</a>
                                                 </li>
-
                                                 <li>
                                                     <a href="pagination.html">Pagination</a>
                                                 </li>
-
                                                 <li>
                                                     <a href="popover-tooltip.html">Popover & Tooltip</a>
                                                 </li>
-
                                                 <li>
                                                     <a href="progress-bar.html">Progress Bar</a>
                                                 </li>
-
                                                 <li>
                                                     <a href="spinner.html">Spinner</a>
                                                 </li>
-
                                                 <li>
                                                     <a href="switcher.html">Switcher</a>
                                                 </li>
-
                                                 <li>
                                                     <a href="table.html">Table</a>
                                                 </li>
-
                                                 <li>
                                                     <a href="tab.html">Tab</a>
                                                 </li>
-
                                             </div>
                                         </ul>
                                     </li>
-
-
-
-
                                     <li class="has-sub">
                                         <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse"
                                             data-target="#icons" aria-expanded="false" aria-controls="icons">
