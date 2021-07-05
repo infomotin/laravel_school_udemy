@@ -22,15 +22,15 @@
                             <thead>
                                 <tr>
                                     <th scope="col">SL No</th>
-                                    <th scope="col">Brand Name </th>
-                                    <th scope="col">Create Date </th>
-                                    <th scope="col">Brand Photo</th>
+                                    <th scope="col">Slider Title </th>
+                                    <th scope="col">Slider Description </th>
+                                    <th scope="col">Slider Photo</th>
                                     <th scope="col">Actions</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 {{-- @php($i = 1) --}}
-                                @foreach ($allbrand as $band)
+                                @foreach ($LoadSlider as $band)
                                     <tr>
                                         <th scope="row">
                                             {{-- using sirial number generate --}}
@@ -38,7 +38,14 @@
                                         </th>
                                         <td>
                                             {{-- this are using model based join table view --}}
-                                            {{ $band->brand_name }}
+                                            {{ $band->title }}
+                                            {{-- quere builder based view --}}
+                                            {{-- {{ $allC->user->name }} --}}
+
+                                        </td>
+                                        <td>
+                                            {{-- this are using model based join table view --}}
+                                            {{ $band->description }}
                                             {{-- quere builder based view --}}
                                             {{-- {{ $allC->user->name }} --}}
 
@@ -50,10 +57,10 @@
 
                                         </td>
                                         <td>
-                                            @if ($band->brand_img == null)
+                                            @if ($band->image == null)
                                                 <span class="text-danger">No Image Found </span>
                                             @else
-                                                <img src="{{ asset($band->brand_img) }}" style="height:40px; width:50px"/>
+                                                <img src="{{ asset($band->image) }}" style="height:40px; width:50px"/>
                                             @endif
                                         </td>
                                         <td>
