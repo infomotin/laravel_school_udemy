@@ -4,6 +4,7 @@ use App\Http\Controllers\ContractController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\BrandController;
 use App\Http\Controllers\MultiController;
+use App\Http\Controllers\HomeController;
 // for querey builder
 use Illuminate\Support\Facades\DB;
 // for working with model
@@ -43,6 +44,9 @@ Route::get('band/delete/{id}', [BrandController::class, 'delete']);
 Route::get('multiphoto/all',[MultiController::class, 'AllImage'])->name('multi.image');
 Route::post('multiphoto/add', [MultiController::class, 'AddImages'])->name('save.images');
 
+// admin all route
+// slider part
+Route::get('home/slider', [HomeController::class, 'LoadSlider'])->name('home.slider');
 
 
 // Route::get('/contract', [ContractController::class, 'index'])->middleware('age');
