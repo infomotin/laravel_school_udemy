@@ -9,7 +9,8 @@ use Illuminate\Support\Facades\DB;
 // for working with model
 use App\Models\User;
 Route::get('/', function () {
-    return view('home1');
+    $brands = DB::table('brands')->get();
+    return view('home1',compact('brands'));
 });
 Route::get('/about', function () {
     return view('about');
