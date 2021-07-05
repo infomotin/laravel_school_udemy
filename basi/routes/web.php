@@ -47,6 +47,8 @@ Route::post('multiphoto/add', [MultiController::class, 'AddImages'])->name('save
 // admin all route
 // slider part
 Route::get('home/slider', [HomeController::class, 'LoadSlider'])->name('home.slider');
+Route::get('slider/edit/{id}', [HomeController::class, 'editSlider']);
+Route::get('slider/delete/{id}', [HomeController::class, 'delSlider']);
 
 
 // Route::get('/contract', [ContractController::class, 'index'])->middleware('age');
