@@ -44,7 +44,7 @@ class BrandController extends Controller
         $image_ext = strtolower($brand_img->getClientOriginalExtension());
         $image_name = $image_gen_name . '.' . $image_ext;
         //image upload Locations
-        $upload_image_path = 'image/brand/';
+        $upload_image_path = 'image/slider/';
         // for data base colum
         $last_image =  $upload_image_path . $image_name;
         // move this image in public folder_name with rename

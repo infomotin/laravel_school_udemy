@@ -4,8 +4,13 @@
     <div class="py-12">
         <div class="container">
             <div class="row">
+                <h4>Home Slider Page</h4>
 
-                <div class="col-md-8">
+                {{-- add new banner  --}}
+                <a href="{{ route('add.slider') }}"><button class="btn btn-info">Add Slider </button></a>
+                <br>
+                <br>
+                <div class="col-md-12">
                     <div class="card">
                         {{-- alert toast massage --}}
                         @if (session('success'))
@@ -60,7 +65,7 @@
                                             @if ($band->image == null)
                                                 <span class="text-danger">No Image Found </span>
                                             @else
-                                                <img src="{{ asset($band->image) }}" style="height:40px; width:50px"/>
+                                                <img src="{{ asset($band->image) }}" style="height:200px; width:250px"/>
                                             @endif
                                         </td>
                                         <td>
