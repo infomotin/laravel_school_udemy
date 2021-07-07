@@ -3,6 +3,7 @@
           ——— LEFT SIDEBAR WITH FOOTER
           =====================================
         -->
+
         <aside class="left-sidebar bg-sidebar">
             <div id="sidebar" class="sidebar sidebar-with-footer">
                 <!-- Aplication Brand -->

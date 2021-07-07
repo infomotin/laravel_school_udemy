@@ -22,9 +22,9 @@
                             <thead>
                                 <tr>
                                     <th scope="col">SL No</th>
-                                    <th scope="col">Sliders Title </th>
-                                    <th scope="col">Sliders Description </th>
-                                    <th scope="col">Sliders Photo </th>
+                                    <th scope="col" width="5%">Sliders Title </th>
+                                    <th scope="col"width="20%">Sliders Description </th>
+                                    <th scope="col" width="35%">Sliders Photo </th>
                                     <th scope="col">Actions </th>
                                 </tr>
                             </thead>
