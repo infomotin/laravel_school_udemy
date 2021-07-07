@@ -7,13 +7,13 @@
                 <div class="col-ml-12">
                     <div class="card">
                         {{-- alert toast massage --}}
-                        {{-- @if (session('success'))
+                        @if (session('success'))
                             <div class="alert alert-info alert-dismissible fade show" role="alert">
                                 <strong> {{ session('success') }}</strong>
                                 <button type="button" class="btn-close" data-bs-dismiss="alert"
                                     aria-label="Close"></button>
                             </div>
-                        @endif --}}
+                        @endif
                         <div class="card-header">
                             <b>All Slider </b>
                             <a href="{{ route('store.slider') }}" style="margin:20px"><button class="btn btn-info">Add Slider</button></a>

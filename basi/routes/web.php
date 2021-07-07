@@ -47,12 +47,11 @@ Route::get('multiphoto/all',[MultiController::class, 'AllImage'])->name('multi.i
 Route::post('multiphoto/add', [MultiController::class, 'AddImages'])->name('save.images');
 // admin panel route
 Route::get('/home/slider', [HomeController::class, 'HomeSlider'])->name('home.slider');
-
-Route::get('/slider/add', [HomeController::class, 'AddSlider'])->name('store.slider');
-Route::post('/slider/insert', [HomeController::class, 'insertSlider'])->name('insertSlider');
-
-Route::get('/slider/edit/{id}', [HomeController::class, 'HomeSlider']);
-Route::get('/slider/delete/{id}', [HomeController::class, 'HomeSlider']);
+Route::get('slider/add', [HomeController::class, 'AddSlider'])->name('store.slider');
+Route::post('slider/insert', [HomeController::class, 'insertSlider'])->name('insertSlider');
+Route::get('slider/edit/{id}', [HomeController::class, 'EditSlider']);
+Route::post('slider/update/{id}', [HomeController::class, 'updateSlider']);
+Route::get('slider/delete/{id}', [HomeController::class, 'HomeSlider']);
 
 
 
