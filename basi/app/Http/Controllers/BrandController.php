@@ -35,7 +35,7 @@ class BrandController extends Controller
                 'brand_img.required' => 'Place upload Image',
 
             ]
-        );
+        )
 
         //image part
         $brand_img = $request->file('brand_img');

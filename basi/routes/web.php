@@ -5,20 +5,22 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\BrandController;
 use App\Http\Controllers\MultiController;
 use App\Http\Controllers\HomeController;
-// for querey builder
 use Illuminate\Support\Facades\DB;
-// for working with model
 use App\Models\User;
+
+
+
+
+// describedAs Route
 Route::get('/', function () {
     $brands = DB::table('brands')->get();
     return view('home1',compact('brands'));
 });
+// describedAs Route
 Route::get('/about', function () {
     return view('about');
 });
-// Route::get('/contract', function () {
-//     echo "This is contract Page";
-// });
+
 Route::get('/stuff', function () {
     echo "This is stuff Page";
 });
@@ -43,15 +45,17 @@ Route::get('band/delete/{id}', [BrandController::class, 'delete']);
 //multi picture upload
 Route::get('multiphoto/all',[MultiController::class, 'AllImage'])->name('multi.image');
 Route::post('multiphoto/add', [MultiController::class, 'AddImages'])->name('save.images');
+// admin panel route
+Route::get('/home/slider', [HomeController::class, 'HomeSlider'])->name('home.slider');
 
-// admin all route
-// slider part
-Route::get('home/slider', [HomeController::class, 'LoadSlider'])->name('home.slider');
-Route::get('slider/add', [HomeController::class, 'AddSlider'])->name('add.slider');
+Route::get('/slider/add', [HomeController::class, 'AddSlider'])->name('store.slider');
+Route::post('/slider/insert', [HomeController::class, 'insertSlider'])->name('insertSlider');
 
-Route::post('slider/store', [HomeController::class, 'InsertSlider'])->name('slider.store');
-Route::get('slider/edit/{id}', [HomeController::class, 'editSlider']);
-Route::get('slider/delete/{id}', [HomeController::class, 'delSlider']);
+Route::get('/slider/edit/{id}', [HomeController::class, 'HomeSlider']);
+Route::get('/slider/delete/{id}', [HomeController::class, 'HomeSlider']);
+
+
+
 
 
 // Route::get('/contract', [ContractController::class, 'index'])->middleware('age');
